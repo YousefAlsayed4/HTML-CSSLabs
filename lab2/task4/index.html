@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>document</title>
+<style>
+    canvas {
+        border: 2px solid black;
+    }
+</style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="400" height="400"></canvas>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+
+    var x = 0;
+    var y = 0;
+    var dx = 1;
+    var dy = 1;
+
+    function drawLine() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(x, y);
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 6; // Increase line thickness to 6 pixels
+        ctx.stroke();
+
+        x += dx;
+        y += dy;
+
+        if (x >= canvas.width || y >= canvas.height) {
+            alert("The line has reached the end!");
+            x = 0;
+            y = 0;
+        }
+
+        requestAnimationFrame(drawLine);
+    }
+
+    drawLine();
+</script>
+
+</body>
+</html>
