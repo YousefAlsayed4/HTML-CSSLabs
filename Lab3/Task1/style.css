@@ -1,0 +1,47 @@
+.container {
+    border: 1px solid black;
+    padding-bottom: 20px;
+    width: 45%;
+}
+
+h1 {
+    margin-left: 15px;
+}
+
+.txt, .mail, p {
+    width: 35%;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    display: block;
+}
+
+.btn {
+    margin-left: 15px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+
+input:valid + p {
+    display: none;
+    border: 1px solid #0be92d;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+input:invalid {
+    border: 1px solid #ff0000;
+}
+
+
+
+.error-message {
+    color: #ff0000;
+    margin-bottom: 16px;
+}
